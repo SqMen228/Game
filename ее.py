@@ -1,66 +1,67 @@
 import random
-
+from shop import *
 class Hero:
     def __init__(self, name, klass, level):
         self.name = name
         self.klass = klass
+        self.balance = 100
+        self.heal_count = 0
         if level == 'Easy':
             if klass == 'Воин':
-                self.damage = 30
                 self.hp = 150
                 self.armor = 10
+                self.weapon = Weapon("Палка", 30, 0)
             if klass == 'Лучник':
-                self.damage = 40
                 self.hp = 120
                 self.armor = 5
+                self.weapon = Weapon("Деревянный лук", 40, 0)
             if klass == 'Маг':
-                self.damage = 50
                 self.hp = 110
                 self.armor = 2
+                self.weapon = Weapon("Волшебный жезл", 50, 0)
         if level == 'Medium':
             if klass == 'Воин':
-                self.damage = 25
                 self.hp = 125
                 self.armor = 70
+                self.weapon = Weapon("Палка", 20, 0)
             if klass == 'Лучник':
-                self.damage = 32
                 self.hp = 100
                 self.armor = 3
+                self.weapon = Weapon("Деревянный лук", 34, 0)
             if klass == 'Маг':
-                self.damage = 45
                 self.hp = 90
                 self.armor = 1
+                self.weapon = Weapon("Волшебный жезл", 45, 0)
         if level == 'Hard':
             if klass == 'Воин':
-                self.damage = 15
                 self.hp = 100
                 self.armor = 3
+                self.weapon = Weapon("Палка", 15, 0)
             if klass == 'Лучник':
-                self.damage = 30
                 self.hp = 85
                 self.armor = 1
+                self.weapon = Weapon("Деревянный лук", 27, 0)
             if klass == 'Маг':
-                self.damage = 40
                 self.hp = 70
                 self.armor = 0
+                self.weapon = Weapon("Волшебный жезл", 35, 0)
 
 
     def __str__(self):
-        return f"Имя: {self.name}\nHP: {self.hp}\nБроня: {self.armor}\nУрон: {self.damage}\nКласс: {self.klass}"
+        return f"Имя: {self.name}\nHP: {self.hp}\nБроня: {self.armor}\nУрон: {self.weapon.damage}\nКласс: {self.klass}"
 
     def attack_monster(self, monster):
         krit = chance(30)
+        damage = self.weapon.damage
         if krit:
-            self.damage += self.damage
-        monster.hp = monster.hp - self.damage + monster.armor // 30
+            damage += self.weapon.damage
+        monster.hp = monster.hp - damage + monster.armor // 30
     def heal(self):
-        k = 0
-        if k >= 2:
-            return print(f'Больше 2 раз нельзя')
-        while 1:
+        if self.heal_count >= 2:
+            print('Больше 2-ух раз нельзя')
+        else:
             self.hp += self.hp // 30
-            k+=1
-            return self.hp
+            self.heal_count+=1
 
 
 
@@ -115,7 +116,7 @@ def input_level_difficulty():
             print(f'Ваша сложность Hard\nУдачной игры)\n\n\n')
             return level
         else:
-            print('ошибочка, укажите цифру сложности которую хотите выбрать.\n')
+            print('Ошибочка, укажите цифру сложности которую хотите выбрать.\n')
 #Klass
 def input_choosing_class(name):
     while 1:
@@ -141,7 +142,9 @@ def fight_monster(monster, hero):
         xod = input(f'{hero.name} Что ты выберешь\n1) Атаковать\n2) Лечение\n')
         if xod == '1':
             hero.attack_monster(monster)
+            print(monster.hp)
             monster.attack_hero(hero)
+            print(hero.hp)
             if monster.hp <= 0:
                 print('YOU WIN')
                 return None
@@ -150,8 +153,9 @@ def fight_monster(monster, hero):
                 return None
         elif xod == '2':
             hero.heal()
+            print(hero.hp)
         else:
-            print('ТЫ УЕБАН')
+            print('Ошибка,выберите другую цифру.')
 
 
 #Начало

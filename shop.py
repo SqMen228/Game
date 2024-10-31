@@ -63,11 +63,3 @@ shop = Shop([knife, sword])
 
 
 
-hero = Hero()
-
-print(hero)
-print(shop)
-shop.buy(hero, knife)
-print(hero)
-print(shop)
-
