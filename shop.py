@@ -23,10 +23,11 @@ class Shop:
     def buy(self, hero: Hero, item: Item):
         if hero.balance - item.price > 0:
             hero.balance -= item.price
-            self.items.remove(item)
             print(f"Вы купили {item.name}. Остаток: {hero.balance}")
+            return item
         else:
             print("Недостаточно денег")
+            return None
 
     def __getitem__(self, n: int):
         for item in self.items:
@@ -56,10 +57,11 @@ class Weapon(Item):
         return string
 
 
-knife = Weapon("Нож", 10, 10)
 sword = Weapon("Меч", 15, 30)
+hunting_bow = Weapon("Охотничий лук", 15, 30)
+magic_stick = Weapon("Магическая палка", 15, 30)
 
-shop = Shop([knife, sword])
+shop1 = Shop([sword, hunting_bow, magic_stick])
 
 
 
