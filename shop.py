@@ -26,7 +26,7 @@ class Shop:
             print(f"Вы купили {item.name}. Остаток: {hero.balance}")
             return item
         else:
-            print("Недостаточно денег")
+            print("Недостаточно денег!")
             return None
 
     def __getitem__(self, n: int):
@@ -50,18 +50,28 @@ class Weapon(Item):
         self.damage = damage
         self.price = price
         self.id = Weapon.id
-        Weapon.id += 1
+        Item.id += 1
 
     def __str__(self):
-        string = f"{self.name} (номер: {self.id})\nУрон: {self.damage}\nЦена: {self.price}"
+        string = f"{self.name} (номер: {self.id}) | Урон: {self.damage} | Цена: {self.price}"
         return string
 
 
-sword = Weapon("Меч", 15, 30)
-hunting_bow = Weapon("Охотничий лук", 15, 30)
-magic_stick = Weapon("Магическая палка", 15, 30)
+class Armor(Item):
+    def __init__(self, name: str, armor: int, extra_hp: int, price: int):
+        self.name = name
+        self.armor = armor
+        self.extra_hp = extra_hp
+        self.price = price
+        self.id = Item.id
+        Item.id += 1
 
-shop1 = Shop([sword, hunting_bow, magic_stick])
+    def __str__(self):
+        string = f"{self.name} (номер: {self.id}) | Доп. HP: {self.extra_hp} | Броня: {self.armor} | Цена: {self.price}"
+        return string
+
+
+
 
 
 

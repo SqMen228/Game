@@ -1,5 +1,6 @@
 import random
 from shop import *
+from items import *
 
 
 class Hero:
