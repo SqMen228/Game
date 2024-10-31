@@ -151,7 +151,7 @@ def fight_monster(monster, hero):
         elif xod == '2':
             hero.heal()
         else:
-            print('ТЫ УЕБАН')
+            print('Ошибка, попробуй еще раз.')
 
 
 #Начало
@@ -190,5 +190,5 @@ name_monster_1 = 'Червослиз'
 monster_1 = Monster(name_monster_1,class_1,level_difficulty)
 print(f'{monster_1}----------------------------------------')
 
-fight_monster(monster_1, me_1)
 
+fight_monsgiger(monster_1, me_1)
