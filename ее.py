@@ -151,7 +151,7 @@ def fight_monster(monster, hero):
         elif xod == '2':
             hero.heal()
         else:
-            print('ТЫ УЕБАН')
+            print('Ошибка.Выбери еще раз.')
 
 
 #Начало
