@@ -24,48 +24,48 @@ eternal_edge = Weapon(name="Вечный Клинок", damage=79, price=161)
 ragnarok = Weapon(name="Рагнарёк", damage=87, price=177)
 
 # Оружие для Стрелка
-hunter_bow = Weapon(name="Охотничий Лук", damage=15, price=30)
-longbow = Weapon(name="Длинный Лук", damage=17, price=33)
-composite_bow = Weapon(name="Композитный Лук", damage=19, price=36)
-elven_bow = Weapon(name="Эльфийский Лук", damage=21, price=40)
-eagle_bow = Weapon(name="Лук Орла", damage=23, price=44)
-shadow_bow = Weapon(name="Лук Тени", damage=25, price=48)
-dragon_bow = Weapon(name="Драконий Лук", damage=27, price=53)
-dark_bow = Weapon(name="Темный Лук", damage=30, price=58)
-soul_bow = Weapon(name="Лук Души", damage=33, price=63)
-fire_bow = Weapon(name="Огненный Лук", damage=36, price=69)
-death_shot = Weapon(name="Выстрел Смерти", damage=39, price=76)
-sniper_bow = Weapon(name="Снайперский Лук", damage=42, price=83)
-chaos_bow = Weapon(name="Лук Хаоса", damage=46, price=91)
-phoenix_bow = Weapon(name="Лук Феникса", damage=50, price=100)
-wrath_bow = Weapon(name="Лук Ярости", damage=55, price=110)
-inferno_bow = Weapon(name="Лук Инферно", damage=60, price=121)
-thunder_bow = Weapon(name="Громовой Лук", damage=66, price=133)
-divine_bow = Weapon(name="Божественный Лук", damage=72, price=146)
-eternity_bow = Weapon(name="Лук Вечности", damage=79, price=161)
-stardust_bow = Weapon(name="Лук Звездной Пыли", damage=87, price=177)
+hunter_bow = Weapon(name="Охотничий Лук", damage=20, price=30)
+longbow = Weapon(name="Длинный Лук", damage=23, price=33)
+composite_bow = Weapon(name="Композитный Лук", damage=25, price=36)
+elven_bow = Weapon(name="Эльфийский Лук", damage=27, price=40)
+eagle_bow = Weapon(name="Лук Орла", damage=29, price=44)
+shadow_bow = Weapon(name="Лук Тени", damage=30, price=48)
+dragon_bow = Weapon(name="Драконий Лук", damage=32, price=53)
+dark_bow = Weapon(name="Темный Лук", damage=33, price=58)
+soul_bow = Weapon(name="Лук Души", damage=37, price=63)
+fire_bow = Weapon(name="Огненный Лук", damage=40, price=69)
+death_shot = Weapon(name="Выстрел Смерти", damage=42, price=76)
+sniper_bow = Weapon(name="Снайперский Лук", damage=46, price=83)
+chaos_bow = Weapon(name="Лук Хаоса", damage=50, price=91)
+phoenix_bow = Weapon(name="Лук Феникса", damage=55, price=100)
+wrath_bow = Weapon(name="Лук Ярости", damage=60, price=110)
+inferno_bow = Weapon(name="Лук Инферно", damage=65, price=121)
+thunder_bow = Weapon(name="Громовой Лук", damage=72, price=133)
+divine_bow = Weapon(name="Божественный Лук", damage=80, price=146)
+eternity_bow = Weapon(name="Лук Вечности", damage=90, price=161)
+stardust_bow = Weapon(name="Лук Звездной Пыли", damage=100, price=177)
 
 # Оружие для Мага
-magic_staff = Weapon(name="Магический Посох", damage=15, price=30)
-crystal_staff = Weapon(name="Кристальный Посох", damage=17, price=33)
-arcane_staff = Weapon(name="Арканный Посох", damage=19, price=36)
-elemental_staff = Weapon(name="Посох Стихий", damage=21, price=40)
-flame_staff = Weapon(name="Посох Пламени", damage=23, price=44)
-lightning_staff = Weapon(name="Грозовой Посох", damage=25, price=48)
-frost_staff = Weapon(name="Ледяной Посох", damage=27, price=53)
-void_staff = Weapon(name="Посох Пустоты", damage=30, price=58)
-necromancer_staff = Weapon(name="Посох Некроманта", damage=33, price=63)
-firestorm_staff = Weapon(name="Посох Огненного Шторма", damage=36, price=69)
-soul_staff = Weapon(name="Посох Души", damage=39, price=76)
-shadow_staff = Weapon(name="Посох Тени", damage=42, price=83)
-chaos_staff = Weapon(name="Посох Хаоса", damage=46, price=91)
-demon_staff = Weapon(name="Демонический Посох", damage=50, price=100)
-heaven_staff = Weapon(name="Посох Небес", damage=55, price=110)
-eternal_staff = Weapon(name="Вечный Посох", damage=60, price=121)
-astral_staff = Weapon(name="Астральный Посох", damage=66, price=133)
-stardust_staff = Weapon(name="Посох Звездной Пыли", damage=72, price=146)
-cosmic_staff = Weapon(name="Космический Посох", damage=79, price=161)
-apocalypse_staff = Weapon(name="Посох Апокалипсиса", damage=87, price=177)
+magic_staff = Weapon(name="Магический Посох", damage=30, price=30)
+crystal_staff = Weapon(name="Кристальный Посох", damage=32, price=33)
+arcane_staff = Weapon(name="Арканный Посох", damage=35, price=36)
+elemental_staff = Weapon(name="Посох Стихий", damage=37, price=40)
+flame_staff = Weapon(name="Посох Пламени", damage=39, price=44)
+lightning_staff = Weapon(name="Грозовой Посох", damage=42, price=48)
+frost_staff = Weapon(name="Ледяной Посох", damage=45, price=53)
+void_staff = Weapon(name="Посох Пустоты", damage=50, price=58)
+necromancer_staff = Weapon(name="Посох Некроманта", damage=54, price=63)
+firestorm_staff = Weapon(name="Посох Огненного Шторма", damage=57, price=69)
+soul_staff = Weapon(name="Посох Души", damage=60, price=76)
+shadow_staff = Weapon(name="Посох Тени", damage=62, price=83)
+chaos_staff = Weapon(name="Посох Хаоса", damage=67, price=91)
+demon_staff = Weapon(name="Демонический Посох", damage=70, price=100)
+heaven_staff = Weapon(name="Посох Небес", damage=75, price=110)
+eternal_staff = Weapon(name="Вечный Посох", damage=80, price=121)
+astral_staff = Weapon(name="Астральный Посох", damage=87, price=133)
+stardust_staff = Weapon(name="Посох Звездной Пыли", damage=95, price=146)
+cosmic_staff = Weapon(name="Космический Посох", damage=100, price=161)
+apocalypse_staff = Weapon(name="Посох Апокалипсиса", damage=110, price=177)
 
 # Броня для всех классов
 old_shirt = Armor(name="Старая Рубашка", armor=3, extra_hp=5, price=30)
@@ -91,28 +91,6 @@ god_plate = Armor(name="Доспех Богов", armor=29, extra_hp=30, price=1
 
 
 # Магазины
-shop1 = Shop(
-    items=[
-        iron_sword,
-        steel_sword,
-        hunter_bow,
-        longbow,
-        magic_staff,
-        crystal_staff,
-        old_shirt,
-        leather_vest,
-    ]
-)
+shop1 = Shop(items=[ iron_sword, steel_sword, knight_blade, berserker_blade, hunter_bow, longbow, composite_bow, elven_bow, magic_staff, crystal_staff, arcane_staff, elemental_staff, old_shirt, leather_vest, iron_armor, knight_armor])
 
-shop2 = Shop(
-    items=[
-        steel_sword,
-        knight_blade,
-        longbow,
-        composite_bow,
-        crystal_staff,
-        arcane_staff,
-        leather_vest,
-        iron_armor,
-    ]
-)
+shop2 = Shop(items=[])

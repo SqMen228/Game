@@ -1,7 +1,6 @@
 import random
-from shop import *
 from items import *
-
+from shop import *
 
 class Hero:
     def __init__(self, name, klass):
@@ -13,15 +12,15 @@ class Hero:
         if klass == 'Воин':
             self.max_hp = 125
             self.armor = 70
-            self.weapon = Weapon("Палка", 20, 0)
+            self.weapon = Weapon("Палка", 10, 0)
         if klass == 'Лучник':
             self.max_hp = 100
             self.armor = 3
-            self.weapon = Weapon("Деревянный лук", 34, 0)
+            self.weapon = Weapon("Деревянный лук", 15, 0)
         if klass == 'Маг':
             self.max_hp = 90
             self.armor = 1
-            self.weapon = Weapon("Волшебный жезл", 45, 0)
+            self.weapon = Weapon("Волшебный жезл", 20, 0)
 
         self.hp = self.max_hp
 
@@ -58,19 +57,32 @@ class Monster:
         self.name = name
         self.klass = klass
         self.prize = prize
-
-        if level == 'Easy':
-            self.damage = 10
-            self.hp = 100
-            self.armor = 0
-        if level == 'Medium':
-            self.damage = 13
-            self.hp = 100
-            self.armor = 0
-        if level == 'Hard':
-            self.damage = 15
-            self.hp = 100
-            self.armor = 0
+        if name_monster_1 == 'Червослиз':
+            if level == 'Easy':
+                self.damage = 10
+                self.hp = 200
+                self.armor = 0
+            if level == 'Medium':
+                self.damage = 13
+                self.hp = 215
+                self.armor = 0
+            if level == 'Hard':
+                self.damage = 15
+                self.hp = 230
+                self.armor = 0
+        elif name_monster_2 == 'Светослух':
+            if level == 'Easy':
+                self.damage = 20
+                self.hp = 300
+                self.armor = 5
+            if level == 'Medium':
+                self.damage = 22
+                self.hp = 320
+                self.armor = 7
+            if level == 'Hard':
+                self.damage = 25
+                self.hp = 340
+                self.armor = 10
 
     def attack_hero(self, hero):
         hero.hp = hero.hp - self.damage + int(hero.armor * 0.4)
@@ -149,6 +161,7 @@ def fight_monster(monster, hero1, hero2):
         hero_for_attack = random.choice(heroes)
         monster.attack_hero(hero_for_attack)
         print(hero_for_attack)
+        print(f'у монстра осталось {monster.hp} хп')
         if hero_for_attack.hp <= 0:
             print('YOU LOSE')
             return False
@@ -159,7 +172,7 @@ def hero_buy_item_in_shop(hero, shop):
     print(shop)
 
     while 1:
-        hero_input = input(f"{hero.name}, выберите номер предмета, или '0' если хотите выйти из магазина")
+        hero_input = input(f"{hero.name}, выберите номер предмета, или '0' если хотите выйти из магазина:\n")
 
         if hero_input == "0":
             return
@@ -199,11 +212,11 @@ print('Ну господа, настало время спускаться в п
 print('Мы спускаемся на 1 этаж подземелья, буд-те на чеку, ведь тут вас ждет местный обитатель,Червослиз.\nЭтот мерзкий и противный слизняк внешне похожий на червя, хоть и кажется опасным но на самом деле довольно слабый и беспомощный.\nОн не имеет защиты не от какого вида урона,просто тупой и вонючий кусок слизи.\n\n')
 
 print('Начнем сражение\n\n')
-print('!Сражение:\nСражаясь с монстрами на выбор у вас есть 3 действия:\n1) Вы можете атаковать монстра(урон от атак будет зависеть от вашего урона, брони монстра и его иммунитета.Также есть шанс выбить критическую атаку которая нанесет Х2 от вашего урона)\n2)Вы можете уклониться(уклонение позволяет вам либо уклониться, либо получить половину урона монстра)\n3) Вы можете вылечить себе 30% от вашего здоровья(не более 2 раз за сражение)\n')
+print('!Сражение:\nСражаясь с монстрами на выбор у вас есть 2 действия:\n1) Вы можете атаковать монстра(урон от атак будет зависеть от вашего урона, брони монстра и его иммунитета.Также есть шанс выбить критическую атаку которая нанесет Х2 от вашего урона)\n2) Вы можете вылечить себе 30% от вашего здоровья(не более 2 раз за сражение)\n')
 
 
 name_monster_1 = 'Червослиз'
-monster_1 = Monster(name_monster_1,class_1,level_difficulty, 30)
+monster_1 = Monster(name_monster_1,class_1,level_difficulty, 70)
 print(f'{monster_1}----------------------------------------')
 
 if fight_monster(monster_1, me_1, me_2) is True:
@@ -212,6 +225,30 @@ if fight_monster(monster_1, me_1, me_2) is True:
 
     me_1.earn_money(monster_1.prize)
     me_2.earn_money(monster_1.prize)
+else:
+    print("Начните заново")
+    exit()
+
+hero_buy_item_in_shop(me_1, shop1)
+hero_buy_item_in_shop(me_2, shop1)
+
+print(me_1)
+print(me_2)
+
+print('Поздравляю вас с победой над первым монстром, дальше вас ждет еще много трудностей, удачи!\n\n')
+print('Далее вас ждет следующий монстр, порождение ничтожество рая, Светослух, главная его особенность в остром слухе, он слышит каждый шорох, к нему невозможно подкрасться\n\n Поскорее уничтожайте его и переходите на следующий этаж.')
+
+readi_to_fight = input('Вы готовы к сражению?\n')
+print('В целом нам похуй)\n\nНАЧНЕМ СРАЖУНИЕ!!!\n\n\n')
+name_monster_2 = 'Светослух'
+monster_2 = Monster(name_monster_2,class_1,level_difficulty,100)
+print(monster_2)
+if fight_monster(monster_2, me_1, me_2) is True:
+    me_1.refresh_stats()
+    me_2.refresh_stats()
+
+    me_1.earn_money(monster_2.prize)
+    me_2.earn_money(monster_2.prize)
 else:
     print("Начните заново")
     exit()
